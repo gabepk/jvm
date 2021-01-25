@@ -1,59 +1,62 @@
+English/[Português](https://github.com/gabepk/jvm/blob/master/README.pt.md)
+
 # Java Virtual Machine
 
-## Introdução
-Implementação em C++ de uma Java Virtual Machine simplificada com base no Java 2 para a disciplina de Software Básico na Universidade de Brasília do semestre 2/2015.
+## Introduction
 
-A maior parte das instruções presentes no bytecode do Java 2 estão implementadas, exceto: ```monitorenter, monitorexit, athrow```.
+C ++ implementation of a simplified Java Virtual Machine based on Java 2 for the Basic Software discipline at the University of Brasília, 2nd semester of 2015.
 
-A implementação também simula funcionalidades básicas de I/O (e.g. `System.out.println()`) e de strings.
+Most of the instructions in the Java 2 bytecode are implemented, except: `monitorenter, monitorexit, athrow`.
 
-## Instruções e Recomendações
-* Siga o [fluxograma proposto](https://googledrive.com/host/0B_YEQWAPOAO3b3lwZmZTTGNONjg) e sugira melhorias.
-* Para criar sua funcionalidade, sempre crie um branch a partir do dev.
-* Sempre faça pull antes de começar a trabalhar e de fazer um push.
-* Sempre crie commits explicativos, para que possamos voltar pra algum commit caso dê algo errado.
-* Antes de fazer o merge de sua funcionalidade no dev, sempre faça o rebase com o dev, resolva os conflitos (quando houver), e verifique se está tudo funcionando.
-* Se a funcionalidade estiver pronta (e também compilando e funcionando) após o rebase com o dev, faça o merge com o dev.
-* Documente o código usando o [Doxygen](https://www.stack.nl/~dimitri/doxygen/manual/docblocks.html) no padrão Javadoc.
-* Sempre que criar um novo arquivo .c/.cpp, adicione-o em CMakeLists.txt.
+The implementation also simulates basic I / O functionalities (eg `System.out.println ()`) and strings.
 
-## Pastas do Projeto
-* Os arquivos .c/.cpp estão contidos na pasta /src
-* Os arquivos .h/.hpp estão contidos na pasta /include
-* Exemplos de programas .java (e seus respectivos .class) estão em /exemplos
-* A documentação está contida na pasta /docs
+## Instructions and Recommendations
+* To create its functionality, always create a branch from the dev.
+* Always pull before you start working and push.
+* Always create explanatory commits, so we can go back to some commit if something goes wrong.
+* Before merge your functionality into dev, always rebase with dev, resolve conflicts (if any), and make sure everything is working.
+* If the functionality is ready (also compiling and working) after rebase with dev, merge with dev.
+* Document the code using [Doxygen](http://www.doxygen.nl/manual/docblocks.html) in the Javadoc standard.
+* Whenever you create a new .c / .cpp file, add it to CMakeLists.txt.
 
-## Geração de Arquivos .class
-Para gerar um arquivo .class de um programa .java, rode o seguinte comando:   
-```javac -source 1.2 -target 1.2 programa.java```
+## Project Folders
+* .C / .cpp files are contained in the / src folder
+* .H / .hpp files are contained in the / include folder
+* Examples of .java programs (and their respective .class) are in / examples
+* The documentation is in the / docs folder
 
-## Compilação do Projeto
-Para compilar o projeto, primeiro crie uma pasta na raiz do projeto:  
-```mkdir build && cd build```  
-Com isso feito, rode o CMake e faça o make:  
-```cmake .. && make```  
-O arquivo executável será então criado, pronto para ser executado.
+## File Generation .class
+To generate a .class file from a .java program, run the following command:
+`javac -source 1.2 -target 1.2 programa.java`
 
-## Execução
-* ```./jvm arquivo.class``` (irá executar o programa contido em arquivo.class)
-* ```./jvm arquivo.class saida.txt``` (irá executar o programa contido em arquivo.class e irá mostrar a estrutura formatada do arquivo .class em saida.txt)
+## Project Compilation
+To compile the project, first create a folder at the root of the project:
+`mkdir build && cd build`
 
-Existe o arquivo Test.class na pasta ```examples```, um simples programa que calcula o 42º elemento da sequência de Fibonacci, você pode usar ele como teste para a primeira execução. Lembre-se de colocar o arquivo .class no mesmo diretório que o executável.
+With that done, run CMake and do the make:
+`cmake .. && make`
+The executable file will then be created, ready to run.
 
-Além disso, verifique se a pasta `java` se encontra no mesmo diretório que o executável, para que a classe Object.class possa ser encontrada pela JVM. O CMake irá automatizar isso, mas saiba disso caso compile o projeto de outra maneira.
+## Execution
+* `./jvm file.class` (will run the program contained in .class file)
+* `./jvm file.class saida.txt` (will run the program contained in .class file and will show the formatted structure of the .class file in output.txt)
 
-## Gerando a Documentação
-Para gerar a documentação, rode o seguinte comando na raiz do projeto: ```doxygen```   
-Com isso feito, a documentação em HTML estará em doxygen/html/ e em LaTeX estará em doxygen/latex/.
+The Test.class file in `examples` folder is a simple program that calculates the 42nd element of the Fibonacci sequenc. You can use it as a test for the first run. Remember to put the .class file in the same directory as the executable.
 
-## Referências
-* [Especificação da JVM - 2ª edição](http://web.cecs.pdx.edu/~apt/vmspec/VMSpecTOC.doc.html)
-* [Noções Básicas de Git](https://git-scm.com/book/pt-br/v1/Primeiros-passos-Noções-Básicas-de-Git)
-* [SourceTree - cliente git com interface gráfica](https://www.sourcetreeapp.com)
+In addition, make sure that the `java` folder is in the same directory as the executable so that the Object.class class can be found by the JVM. CMake will automate this, but you should know this information in case you compile the project in another way.
+
+## Generating Documentation
+To generate the documentation, run the following command at the root of the project: `doxygen`
+With this done, the HTML documentation will be in doxygen / html / and in LaTeX it will be in doxygen / latex /.
+
+## References
+* [JVM specification - 2nd edition](http://web.cecs.pdx.edu/~apt/vmspec/VMSpecTOC.doc.html)
+* [Basic Git](https://git-scm.com/book/pt-br/v1/Primeiros-passos-Noções-Básicas-de-Git)
+* [SourceTree - git client with graphical interface](https://www.sourcetreeapp.com)
 * [CMake 3.3.2 - download](https://cmake.org/download/)
-* [Explicação em português do .class](http://www.mentebinaria.com.br/zine/edicoes/1/ClassInjection.txt)
+* [Portuguese explanation of .class](http://www.bertochi.com.br/zines/cogubin/edicoes/1/ClassInjection.txt)
 
-## Desenvolvedores
+## Developers
 * Ana Paulino
 * Arthur Emídio
 * Gabriella Esteves
